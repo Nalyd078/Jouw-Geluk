@@ -1,0 +1,24 @@
+/*! Reset all elements !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+* {
+  margin: 0; padding: 0; border: 0;
+  background: transparent; color: #000;
+  font-family: 'Calibri', sans-serif;
+  line-height: 1;
+  position: relative;
+}
+
+*:focus { outline: none; box-shadow: none; }
+
+/*! Body init !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+body {
+  width: -webkit-fill-available;
+  position: relative; top: 0 !important; overflow: auto;
+  background-color: var(--col-04);
+}
+
+/*! Z-INDEX !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+body { z-index: 1; }
+#header1, #header2 { z-index: 200; }
+#navbar, #menu-btn {  z-index: 210; }
+#content  { z-index: 10; }
+#footer, #footer-bottom { z-index: 100; }

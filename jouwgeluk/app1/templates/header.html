@@ -1,0 +1,121 @@
+<style>
+
+ #header1 {
+   display:flex;
+   width: var(--site-width);
+   margin: auto;
+   border-bottom: 1px solid var(--col-07);
+   background: var(--col-03);
+ }
+ #header1 > p {
+   margin: auto 50px;
+   width: -webkit-fill-available;
+   color: var(--col-01);
+ }
+ #header1 > p > a {
+   color: var(--col-01);
+ }
+ #header1 > p > a:nth-child(1), #header1 > p > a:nth-child(3) {
+   cursor: pointer;
+   text-decoration: none;
+ }
+ #header1 > #socials > .socials-placeholder svg {
+   width: 24px;
+   height: 24px;
+   margin: 8px 10px;
+   cursor: pointer;
+ }
+ #header1 > #socials > .socials-placeholder svg:active {
+   transform: scale(0.92);
+ }
+ #header1 > #socials > .socials-placeholder svg > path {
+   fill: var(--col-01);
+ }
+ .socials-placeholder {
+   display: flex;
+   margin-right: 50px;
+ }
+ #header2 {
+   display:flex;
+   width: var(--site-width);
+   margin: 0 auto;
+   border-bottom: 1px solid var(--col-07);
+   background-color: var(--col-03);
+ }
+ #header2 > #logo {
+   margin: auto;
+ }
+ #header2 > #logo > svg {
+   width: 175px;
+   height: 175px;
+   margin: 5px auto;
+   cursor: pointer;
+ }
+ #header2 > #logo > svg:active{
+   transform: scale(0.92);
+ }
+
+/* Hover styling */
+ #header1 > p > a:nth-child(1):hover, #header1 > p > a:nth-child(3):hover {
+   color: var(--col-002);
+ }
+ #header1 > #socials > .socials-placeholder svg:hover > path {
+   fill: var(--col-002);
+ }
+ /* Media Screen */
+ @media only screen and (max-width: 691px){
+   #header1 {
+     display: block;
+     height: 62px;
+     margin-top: 10px;
+   }
+   #header1 > p {
+     text-align: center;
+     margin: auto 10px;
+   }
+   #header1 > #socials {
+     justify-content: center;
+     margin-right: 0;
+   }
+ }
+ @media only screen and (max-width: 377px){
+   #header1 {
+     height: 74px;
+   }
+   #header1 > p > a:nth-child(1) {
+     font-size: 4.3vw;
+   }
+   #header1 > p > a:nth-child(2) {
+     display: none;
+   }
+   #header1 > p > a:nth-child(3) {
+     flex-direction: column;
+     display: block;
+   }
+   #header2 > #logo > svg {
+     width: 47vw;
+   }
+ }
+</style>
+<!-- HTML LAYOUT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<div id="header1">
+  <p><a href="mailto:bodyshapedordrecht@gmail.com">info@jouwgelukscoach.nl</a> <a>|</a> <a>06-50748708</a></p>
+  <div id="socials">
+    <div class="socials-placeholder">
+      {% include "svg/fb.svg" %} {% include "svg/ig.svg" %}
+    </div>
+  </div>
+</div>
+<div id="header2">
+  <div id="logo" onclick="change_route('{{scheme}}://{{domain_url}}/home', '{{scheme}}://{{domain_url}}/static/js/pages/home.js')">
+    {% include "svg/logo.svg" %}
+  </div>
+</div>
+
+<!-- JS SCRIPT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<script>
+
+  $(document).ready(function(){
+  });
+
+</script>

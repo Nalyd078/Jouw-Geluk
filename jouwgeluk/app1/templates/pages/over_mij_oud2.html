@@ -1,0 +1,123 @@
+{% extends "index.html" %}
+
+{% block content %}
+  <div class="page-content">
+
+    <div style="display:none !important;">
+      <title>Over Mij - BodyShape</title>
+    </div>
+
+    <style>
+      #about-me-bg {
+        background-image: url({{url_for('static', filename='/img/court.jpg')}});
+        background-size: cover;
+        background-position: center;
+        height: 100vh;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+      }
+      #about-me-content > div {
+        padding: 100px 0 100px 100px;
+        width: calc(50% + 100px);
+      }
+      #about-me-content > div > div > h1 {
+        font-size: 92px;
+      }
+      #about-me-content > div > p {
+        padding-right: 21%;
+        margin-top: 15px;
+      }
+      #about-me-picture > div {
+        right:-35px;
+      }
+      #about-me-picture  {
+        background-image: url({{url_for('static', filename='/img/coach.jpg')}});
+        width:420px;
+        height:360px;
+      }
+      #about-me-picture > div {
+        height:330px;
+        width:270px;
+      }
+      /* Media Screen */
+      @media only screen and (max-width: 981px){
+        #about-me-content > div > div > h1 {
+          min-width: 215px;
+        }
+        #about-me-content > div > div > h1 {
+          font-size: 60px;
+        }
+        #about-me-picture > div {
+          height: 238px;
+          width: 194px;
+        }
+        #about-me-picture > img {
+          width: 302px;
+          height: 259px;
+        }
+      }
+      @media only screen and (max-width: 711px){
+        #about-me-bg {
+          display: none;
+        }
+        #about-me-content > div {
+          width: -webkit-fill-available;
+          padding: 100px 0 100px 0px;
+        }
+        #about-me-content > div > div {
+          flex-direction: column;
+        }
+        #about-me-content > div > div > h1 {
+          order: 2;
+          text-align: center;
+        }
+        #about-me-picture {
+          margin: auto;
+        }
+        #about-me-picture > div {
+          right: 0;
+        }
+        #about-me-picture > img {
+          padding-right: 35px;
+        }
+      }
+    </style>
+    <!-- HTML LAYOUT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <div id="about-me-bg"></div>
+    <div id="about-me-content">
+      <div style="background:white;">
+        <div style="display:flex; margin-bottom: 35px;">
+          <h1 style="width:-webkit-fill-available; flex-shrink:1; font-family:var(--deco-font); margin:auto 20px auto 0; text-decoration:underline;">Rochelle <br>van <br>Gulik</h1>
+          <div id="about-me-picture">
+            <div style="position:absolute; top:-35px; background:var(--col-01);"></div>
+            <!-- <img src="{{url_for('static', filename='/img/coach.jpg')}}"> -->
+          </div>
+        </div>
+        <p style="line-height:var(--line-height-1);">
+          Hi allemaal! Ik ben Rochelle, de coach van BodyShape in Dordrecht. Ik ben 29 jaar en ik wil jullie graag wat meer over mijzelf vertellen.
+          <br></p>
+        <p style="line-height:var(--line-height-1);">
+          Mijn hele leven ben ik al met sport bezig. Als 4 jarig meisje ging ik op atletiek, want daar mocht ik lekker hard rennen. Op mijn 12e ben ik mij gaan specialiseren in het sprinten en hordenlopen. Ik heb toen een aantal jaren op nationaal en internationaal niveau gesport. Helaas vanwege een steeds terugkerende blessure ben ik gestopt.
+          <br></p>
+        <p style="line-height:var(--line-height-1);">
+          Ik heb de opleiding Sport & Bewegen gevolgd. Hier kwam ik erachter dat ik lesgeven ontzettend leuk vind om te doen. Toen ik mijn diploma’s behaalde en stopte met atletiek, wist ik dat ik iets voor mijzelf wilde gaan doen met sport en lesgeven. Hieruit is mijn kleine bedrijfje BodyShape ontstaan!
+          Ik wil mijzelf blijven ontwikkelen en daarom ben ik via de NHA thuisopleidingen aan het volgen. Dit zijn opleidingen die te maken hebben met sport, voeding en coachen. Hier wil ik ook zeker meer mee gaan doen in de toekomst.
+          <br></p>
+        <p style="line-height:var(--line-height-1);">
+          Ik heb gekozen om buiten les te gaan geven omdat ik sporten in de buitenlucht zelf heerlijk vind, maar ook omdat ik ervan overtuigd ben dat dit goed is voor je lichaam en geest.
+          Tijdens mijn lessen staan persoonlijke aandacht en plezier voorop. Ik ben ervan overtuigd dat je alles kunt bereiken, zolang je er maar plezier in hebt.
+          Small progress is still progress is een quote die erg bij mij past. We willen uiteindelijk toch allemaal resultaat voor de lange termijn?!
+          <br></p>
+        <p style="line-height:var(--line-height-1);">
+          Ik ben niet de coach die schreeuwend voor je staat, maar ik sta naast je en help je net dat ene stapje extra te zetten!
+          Denk jij dat ik als coach bij jou pas? Neem dan gerust contact op en ik help je graag met al je vragen en doelen.
+        </p>
+      </div>
+
+
+
+    </div>
+
+  </div>
+{% endblock %}

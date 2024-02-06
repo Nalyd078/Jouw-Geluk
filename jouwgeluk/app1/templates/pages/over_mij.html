@@ -1,0 +1,105 @@
+{% extends "index.html" %}
+
+{% block content %}
+  <div class="page-content">
+
+    <div style="display:none !important;">
+      <title>Over Mij - Jouw Geluk</title>
+    </div>
+
+    <style>
+      #about-coach {
+        background-color: var(--col-01);
+      }
+      #about-coach2 {
+        background-color: var(--col-05);
+      }
+      #about-coach > .infospacer-content {
+        text-align: left;
+        line-height: 1.5;
+      }
+      #about-coach > .infospacer-content > p {
+        font-size: medium;
+        padding: 0 0 20px 0;
+      }
+      #about-coach > .infospacer-content > div > div {
+        height:330px;
+        width:50%;
+      }
+      #about-coach > .infospacer-content > div > button:nth-child(1) {
+        margin-right: 5px;
+      }
+      #about-coach > .infospacer-content > div > button:nth-child(2) {
+        margin-left: 5px;
+      }
+      #about-me-picture  {
+        background-image: url("{{url_for('static', filename='/img/rochelle.jpg')}}");
+        width: 45%;
+        height: 30vw;
+        margin: 0px 40px;
+        background-position: center;
+        background-size: cover;
+        float: right;
+        margin-top: -150px;
+        transform: translate(0px, -2vw);
+      }
+
+    </style>
+    <!-- HTML LAYOUT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <div class="container-images" style="background-image: url({{url_for('static', filename='/img/hd-city-wallpaper.jpg')}})">
+      <div style="position:absolute; top:42%; width: 100%; text-align: center;">
+        <h2 style="color:white; font-family: var(--deco-font); font-size: 75px; text-shadow: 5px 2px 0 grey;">Over mij</h2>
+      </div>
+    </div>
+    <div class="gold infospacer">
+      {% include "svg/curved-layer.svg" %}
+      <div id="about-coach" style="text-align:center; padding:20px 0 32px;">
+        <div class="infospacer-content">
+          <div style="display:flex; margin:15px">
+            <h1 style="font-family:var(--deco-font); margin:auto 0; width:50%; font-size:-webkit-xxx-large;">Rochelle <br>van <br>&nbsp; Gulik<br><br></h1>
+            <div style="background:var(--col-08); position:absolute; right: 0; right:0; width:38%; height:30vw;"></div>
+          </div>
+            <div id="about-me-picture">
+            </div>
+          <p style="line-height:var(--line-height-1);">
+            Hi allemaal! Ik ben Rochelle, de coach van BodyShape in Dordrecht. Ik ben 29 jaar en ik wil jullie graag wat meer over mijzelf vertellen.
+            <br></p>
+          <p style="line-height:var(--line-height-1);">
+            Mijn hele leven ben ik al met sport bezig. Als 4 jarig meisje ging ik op atletiek, want daar mocht ik lekker hard rennen. Op mijn 12e ben ik mij gaan specialiseren in het sprinten en hordenlopen. Ik heb toen een aantal jaren op nationaal en internationaal niveau gesport. Helaas vanwege een steeds terugkerende blessure ben ik gestopt.
+            <br></p>
+          <p style="line-height:var(--line-height-1);">
+            Ik heb de opleiding Sport & Bewegen gevolgd. Hier kwam ik erachter dat ik lesgeven ontzettend leuk vind om te doen. Toen ik mijn diploma’s behaalde en stopte met atletiek, wist ik dat ik iets voor mijzelf wilde gaan doen met sport en lesgeven. Hieruit is mijn kleine bedrijfje BodyShape ontstaan!
+            Ik wil mijzelf blijven ontwikkelen en daarom ben ik via de NHA thuisopleidingen aan het volgen. Dit zijn opleidingen die te maken hebben met sport, voeding en coachen. Hier wil ik ook zeker meer mee gaan doen in de toekomst.
+            <br></p>
+          <p style="line-height:var(--line-height-1);">
+            Ik heb gekozen om buiten les te gaan geven omdat ik sporten in de buitenlucht zelf heerlijk vind, maar ook omdat ik ervan overtuigd ben dat dit goed is voor je lichaam en geest.
+            Tijdens mijn lessen staan persoonlijke aandacht en plezier voorop. Ik ben ervan overtuigd dat je alles kunt bereiken, zolang je er maar plezier in hebt.
+            Small progress is still progress is een quote die erg bij mij past. We willen uiteindelijk toch allemaal resultaat voor de lange termijn?!
+            <br></p>
+          <p style="line-height:var(--line-height-1);">
+            Ik ben niet de coach die schreeuwend voor je staat, maar ik sta naast je en help je net dat ene stapje extra te zetten!
+            Denk jij dat ik als coach bij jou pas? Neem dan gerust contact op en ik help je graag met al je vragen en doelen.
+          </p>
+          <div style="display:flex;">
+            <button class="black-btn svg-btn"> {% include "svg/signup.svg" %} <a>Inschrijven</a></button>
+            <button class="black-btn svg-btn"> {% include "svg/mail-icon.svg" %} <a>Stel je vraag</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="black infospacer">
+      {% include "svg/curved-layer.svg" %}
+      <div id="about-coach2" style="text-align:center; padding:20px 0 32px;">
+        <div class="infospacer-content">
+          <p style="line-height:var(--line-height-1);">
+        </div>
+        <div class="photo-gallery">
+          <img src="{{url_for('static', filename='/img/cardio-01.jpg')}}">
+          <img src="{{url_for('static', filename='/img/cardio-02.jpg')}}">
+          <img src="{{url_for('static', filename='/img/circuit-01.jpg')}}">
+        </div>
+      </div>
+    </div>
+
+  </div>
+{% endblock %}

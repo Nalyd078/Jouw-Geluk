@@ -1,0 +1,109 @@
+{% extends "index.html" %}
+
+{% block content %}
+  <div class="page-content">
+
+    <div style="display:none !important;">
+      <title>Over Mij - BodyShape</title>
+    </div>
+
+    <style>
+      #content {
+        background: var(--col-05);
+      }
+      #over-mij-div > img {
+        width: 30%;
+        height: fit-content;
+      }
+      #over-mij-div > img {
+        margin: 2% 1%;
+      }
+      #over-mij-div > div {
+        margin: 2% 1%;
+      }
+      #over-mij-div > div > p {
+        text-align: justify;
+        background-image: url({{url_for('static', filename='/img/paint.png')}});
+        background-size: 100%;
+        background-position: center;
+
+      }
+      #over-mij-div > div > p:nth-child(even) {
+        padding: 8px 50px 8px 70px;
+        margin: -2px 70px -2px 50px;
+      }
+      #over-mij-div > div > p:nth-child(odd) {
+        margin: -2px 50px -2px 70px;
+        padding: 0 70px 8px 50px;
+      }
+      #over-mij-div > div > h1 {
+        /* font-size: 2vw; */
+        background-image: url({{url_for('static', filename='/img/paint.png')}});
+        background-size: 100%;
+        background-position: top;
+        width: fit-content;
+        margin: 0 auto;
+        padding: 8px 20px;
+      }
+      #slogan-1 {
+        background-image: linear-gradient(to bottom, var(--col-01), var(--col-01), var(--col-02));
+      }
+      #slogan-1 > h1 {
+        padding: 20px 0 20px 0;
+      }
+      @media only screen and (max-width: 691px){
+        #over-mij-div {
+          flex-direction: column;
+        }
+        #over-mij-div > img {
+          width: -webkit-fill-available;
+        }
+        #over-mij-div > img, #over-mij-div > div {
+          margin: 3%;
+        }
+        #over-mij-div > div > p {
+          /* font-size: 2vw; */
+        }
+        #over-mij-div > div > h1 {
+          /* font-size: 4vw; */
+        }
+        #slogan-1 > h1 {
+          /* font-size: 4vw; */
+        }
+      }
+    </style>
+
+    <div id="over-mij-div" style="margin:0 50px 5%; display:flex;">
+      <img style="border-radius:100%; aspect-ratio:1 / 1;" src="{{url_for('static', filename='/img/bodyshape1.jpg')}}">
+      <div style="height:fit-content; width:-webkit-fill-available; flex-shrink:1;">
+        <h1 style="font-family:var(--deco-font); text-align:center;">Rochelle van Gulik</h1>
+        <p style="line-height:var(--line-height-1);">
+          Hi allemaal! Ik ben Rochelle, de coach van BodyShape in Dordrecht. Ik ben 29 jaar en ik wil jullie graag wat meer over mijzelf vertellen.
+          <br></p>
+        <p style="line-height:var(--line-height-1);">
+          Mijn hele leven ben ik al met sport bezig. Als 4 jarig meisje ging ik op atletiek, want daar mocht ik lekker hard rennen. Op mijn 12e ben ik mij gaan specialiseren in het sprinten en hordenlopen. Ik heb toen een aantal jaren op nationaal en internationaal niveau gesport. Helaas vanwege een steeds terugkerende blessure ben ik gestopt.
+          <br></p>
+        <p style="line-height:var(--line-height-1);">
+          Ik heb de opleiding Sport & Bewegen gevolgd. Hier kwam ik erachter dat ik lesgeven ontzettend leuk vind om te doen. Toen ik mijn diploma’s behaalde en stopte met atletiek, wist ik dat ik iets voor mijzelf wilde gaan doen met sport en lesgeven. Hieruit is mijn kleine bedrijfje BodyShape ontstaan!
+          Ik wil mijzelf blijven ontwikkelen en daarom ben ik via de NHA thuisopleidingen aan het volgen. Dit zijn opleidingen die te maken hebben met sport, voeding en coachen. Hier wil ik ook zeker meer mee gaan doen in de toekomst.
+          <br></p>
+        <p style="line-height:var(--line-height-1);">
+          Ik heb gekozen om buiten les te gaan geven omdat ik sporten in de buitenlucht zelf heerlijk vind, maar ook omdat ik ervan overtuigd ben dat dit goed is voor je lichaam en geest.
+          Tijdens mijn lessen staan persoonlijke aandacht en plezier voorop. Ik ben ervan overtuigd dat je alles kunt bereiken, zolang je er maar plezier in hebt.
+          Small progress is still progress is een quote die erg bij mij past. We willen uiteindelijk toch allemaal resultaat voor de lange termijn?!
+          <br></p>
+        <p style="line-height:var(--line-height-1);">
+          Ik ben niet de coach die schreeuwend voor je staat, maar ik sta naast je en help je net dat ene stapje extra te zetten!
+          Denk jij dat ik als coach bij jou pas? Neem dan gerust contact op en ik help je graag met al je vragen en doelen.
+        </p>
+      </div>
+    </div>
+    <div class="gold infospacer"> {% include "svg/curved-layer.svg" %}
+      <div id="slogan-1">
+      <h1 style="font-family:var(--deco-font); z-index:99; text-align:center; width:-webkit-fill-available;">~ Samen bereik je meer ~</h1>
+      </div>
+    </div>
+
+
+  </div>
+{% endblock %}

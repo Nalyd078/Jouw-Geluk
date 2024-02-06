@@ -1,0 +1,237 @@
+<!-- INCLUDE THIS IN YOUR HTML WITH (# = %) !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+{# include "navbar.html" #}
+
+<!-- CSS STYLING !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<style>
+  /* Main Styling */
+  #navbar {
+    display: flex;
+    box-shadow: 0vw 3.5px 4.5px -1.0px var(--col-004);
+    background: var(--col-004);
+  }
+  .nav-spacer {
+    width: -webkit-fill-available;
+  }
+  #menu-btn > svg {
+    width: 47px; height: 47px;
+    display: none;
+    position: absolute;
+    left: 15px;
+    top: -132px;
+    cursor: pointer;
+  }
+  #menu-btn > svg:active {
+    transform: scale(0.92);
+  }
+  #menu-btn > svg > path {
+    fill: var(--col-001);
+  }
+  .nav-btn > svg {
+    height: 22px;
+    width: 22px;
+    margin-right: 5px;
+    transform: translate(0px,-2px);
+  }
+  .nav-btn > svg > path {
+    fill: var(--col-003);
+  }
+  .nav-btn {
+    display: flex;
+    padding: 14px 18px;
+    margin: auto;
+    cursor: pointer;
+    border-top: solid var(--col-004);
+  }
+  .nav-btn > p {
+    font-family: var(--txt-font);
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    color: var(--col-003);
+    transform: translate(0px,2px);
+  }
+  .drop-btn > p {
+    font-family: var(--txt-font);
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    color: var(--col-003);
+  }
+  .dropdown {
+    margin: auto;
+  }
+  .dropdown > button {
+    cursor: auto;
+  }
+  .fa {
+    margin: 3px 5px;
+    color: var(--col-003);
+  }
+  .drop-content {
+    display: none;
+    position: absolute;
+    border: solid;
+    border-width: 0 2.75px 2.75px 2.75px;
+    border-color: var(--col-004);
+    border-radius: 0 0 9px 9px;
+    background-color: var(--col-004);
+    box-shadow: 0vw 3.5px 4.5px -1.0px var(--col-004);
+  }
+  .drop-btn {
+    padding: 12px 15px;
+    width: -webkit-fill-available;
+    border-bottom: solid var(--col-004);
+    border-radius: 0 0 9px 9px;
+    text-align: left;
+    cursor: pointer;
+  }
+  /* Hover styling */
+  #menu-btn > svg > path:hover {
+    fill: var(--col-002);
+    transition: all .15s linear;
+  }
+  .nav-btn:hover {
+    border-top: solid var(--col-002);
+    box-shadow: 0 2px 2px -2px var(--col-004);
+    transition: all .15s linear;
+  }
+  .dropdown > .nav-btn:hover {
+    box-shadow: none;
+  }
+  .nav-btn:hover > .fa {
+    color: var(--col-002)
+  }
+  .nav-btn:hover > svg > path {
+    fill: var(--col-002);
+  }
+  .nav-btn:hover > p {
+    color: var(--col-002);
+  }
+  .drop-content:hover {
+    transition: all .5s linear;
+  }
+  .drop-btn:hover > p {
+    color: var(--col-002);
+  }
+  /* Media Screen */
+  @media only screen and (min-width: 981px){
+    .dropdown:hover > .drop-content {
+      display: block;
+    }
+    .dropdown:hover > .nav-btn {
+      border-left: solid var(--col-004);
+      border-right: solid var(--col-004);
+      border-top: solid var(--col-002);
+      border-width: 3.25px 2.75px;
+    }
+    .dropdown > .nav-btn {
+      border-left: solid var(--col-004);
+      border-right: solid var(--col-004);
+      border-width: 2.75px;
+    }
+  }
+  @media only screen and (max-width: 1013px){
+    #navbar{
+      display: none;
+      flex-direction: column;
+    }
+    .drop-content {
+      position: relative;
+    }
+    .nav-btn, .dropdown {
+      margin: 0;
+    }
+    .nav-btn {
+      width: -webkit-fill-available;
+    }
+    .dropdown > button {
+      cursor: pointer;
+    }
+    .drop-content {
+      border: 0;
+      box-shadow: none;
+    }
+    .drop-btn:hover {
+      border-bottom: solid var(--col-002);
+      border-radius: 0;
+    }
+    #menu-btn > svg {
+      display: block;
+    }
+  }
+  @media only screen and (max-width: 499px){
+    #menu-btn > svg {
+      width: 100%;
+      position: relative;
+      margin-top: 15px;
+      padding: 0px 0px 15px 0px;
+      left: 0%;
+      top: 0;
+      border-bottom: solid var(--col-004) 1px;
+    }
+  }
+  @media only screen and (max-width: 201px){
+    .nav-btn > svg {
+      display: none;
+    }
+    .nav-btn > p, .drop-btn > p {
+      font-size: 7.05vw;
+    }
+  }
+</style>
+
+<!-- HTML LAYOUT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<div id="menu-btn">
+  {% include "svg/hbmenu.svg" %}
+</div>
+<div id="navbar">
+  <div class="nav-spacer"></div>
+ <button class="nav-btn" onclick="change_route('{{scheme}}://{{domain_url}}/home', '{{scheme}}://{{domain_url}}/static/js/pages/home.js')"> {% include "svg/home.svg" %} <p>Home</p></button>
+ <button class="nav-btn" onclick="change_route('{{scheme}}://{{domain_url}}/over_mij')"> {% include "svg/overmij.svg" %} <p>Over mij</p></button>
+ <div class="dropdown">
+   <button class="nav-btn"> {% include "svg/offer.svg" %} <p>Coaching aanbod</p><i class="fa fa-caret-down"></i></button>
+   <div class="drop-content">
+     <button class="drop-btn" onclick="change_route('{{scheme}}://{{domain_url}}/cardioboxing')"><p>Life Coaching</p></button>
+     <button class="drop-btn" onclick="change_route('{{scheme}}://{{domain_url}}/circuittraining')"><p>Kinder Coaching</p></button>
+   </div>
+ </div>
+ <button class="nav-btn" onclick="change_route('{{scheme}}://{{domain_url}}/inschrijven')"> {% include "svg/signup.svg" %} <p>Inschrijven</p></button>
+ <button class="nav-btn" onclick="change_route('{{scheme}}://{{domain_url}}/contact')"> {% include "svg/contact.svg" %} <p>Contact</p></button>
+ <div class="nav-spacer"></div>
+</div>
+
+<!-- JS SCRIPT / jQuery !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+<script>
+
+  $(document).ready(function(){
+
+    $(".dropdown > .nav-btn").click(function(){
+      if (window.innerWidth < 971) {
+
+        if ($(this).parent().children(".drop-content").css("display") === "none") {
+          $(this).parent().children(".drop-content").show();
+        }
+        else {
+          $(this).parent().children(".drop-content").removeAttr('style');
+        }
+      }
+    });
+
+    $(window).on('resize', function(){
+      $(".drop-content").removeAttr('style');
+      $("#navbar").removeAttr('style');
+    });
+
+    $("#menu-btn > svg").click(function(){
+      if ($("#navbar").css("display") === "none") {
+        $("#navbar").css("display", "flex");
+      }
+      else {
+        $("#navbar").removeAttr('style');
+      }
+    });
+
+
+  });
+
+</script>

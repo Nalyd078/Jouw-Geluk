@@ -1,0 +1,146 @@
+/*! Root Base !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+
+:root {
+  --col-01: #d1b38f; /* Color from Logo */
+  --col-02: #decac3; /* Color touch */
+  --col-03: #f5f0ea; /* Huisstijl kleur beige */
+  --col-04: #f7f9fa; /* Background & txt color */
+  --col-07: #eef4f7; /* Nav buttons touch / Lining color */
+  --col-05: #444444; /* Black Buttons/lining */
+  --col-06: #222222; /* Black Buttons/lining touch */
+  --col-07: #decac3; /* Kleur huisstijl */
+  --col-08: #ccd6cd; /* Groene Kleur huisstijl */
+
+  --col-001: #666666; /* Button kleur grijs */
+  --col-002: #444444; /* Touch kleur donkergrijs */
+  --col-003: #d1b38f; /* Logo kleur */
+  --col-004: #f5f0ea; /* Huisstijl kleur beige */
+  --site-width: 100%; /* Width of the site */
+  --deco-font: Amsterdam Four;
+  --txt-font: Montserrat-Regular;
+  --line-height-1: 1.5;
+  --img-height: 30.1vw;
+}
+
+@font-face {
+  font-family: "Amsterdam Four";
+  src: url("/static//fonts/Amsterdam Four.ttf")
+}
+@font-face {
+  font-family: "Montserrat-Regular";
+  src: url("/static//fonts/Montserrat-Regular.ttf")
+}
+
+/*! Container Image for content !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.container-images {
+  height: var(--img-height);
+  width: -webkit-fill-available;
+  background-position: center;
+  background-size: cover;
+}
+/*! Align content !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.infospacer-content {
+  width: 50%;
+  margin: auto;
+}
+.infospacer-content > h1 {
+  padding: 12px 0;
+  font-family: var(--deco-font);
+}
+.infospacer-content > h3 {
+  padding: 12px 0;
+  font-family: var(--txt-font);
+  font-size: x-large;
+  color: var(--col-03);
+}
+.infospacer-content > p {
+  text-align: left;
+  font-size: larger;
+  line-height: 1.95;
+  padding: 12px 0px;
+  text-align: justify;
+}
+/*! Photo Gallery for content !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.photo-gallery {
+  display: flex;
+  justify-content: center;
+  margin: 32px auto 12px;
+}
+.photo-gallery > img {
+  height: 375px;
+  width: 275px;
+  margin: 0 10px;
+  border: solid var(--col-01) 1px;
+}
+/*! Curved Layer for content !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.infospacer {
+  width: var(--site-width);
+}
+.infospacer > svg {
+  width: var(--site-width);
+  transform: translate(0, -51.5%);
+  pointer-events: none;
+  position: absolute;
+  height: fit-content;
+}
+.gold > svg > path {
+  fill: var(--col-01);
+}
+.black > svg > path {
+  fill: var(--col-05);
+}
+/*! SVG Buttons for content !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
+.svg-btn {
+  display: flex;
+  padding: 10px;
+  margin: auto;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+}
+.svg-btn:active {
+  transform: scale(0.92);
+}
+.svg-btn > svg {
+  height: 30px;
+  width: 30px;
+  margin-right: 5px;
+}
+.svg-btn > svg > path {
+  fill: var(--col-03);
+}
+.svg-btn > a {
+  color: var(--col-04);
+  font-family: var(--txt-font);
+  font-size: 20px;
+  margin-top: 5px;
+  text-shadow: 0 0.075em 0.075em rgb(0 0 0 / 50%);
+  white-space: nowrap;
+  text-decoration: none;
+}
+.gold-btn {
+  background-color: var(--col-01);
+}
+.gold-btn:hover {
+  background-color: var(--col-02);
+  transition: all .15s linear;
+}
+.black-btn {
+  background-color: var(--col-05);
+}
+.black-btn:hover {
+  background-color: var(--col-06);
+  transition: all .15s linear;
+}
+@media only screen and (max-width: 377px){
+  .svg-btn {
+    padding: 3.5vw;
+  }
+  .svg-btn > svg {
+    height: 8.6vw;
+  }
+  .svg-btn > a {
+    font-size: 5.87vw;
+  }
+}

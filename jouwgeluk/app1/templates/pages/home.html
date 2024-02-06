@@ -1,0 +1,211 @@
+<!-- INCLUDE THIS IN YOUR HTML WITH (# = %) !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+{# include "home.html" #}
+
+<!-- Main Styling -->
+{% extends "index.html" %}
+
+{% block content %}
+  <div class="page-content">
+    <!-- CSS STYLING !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <style>
+      /* Main Styling */
+      .mySLides {
+        display: none;
+      }
+      .slideshow-container {
+        max-width: var(--site-width);
+        position: relative;
+        margin: auto;
+      }
+      .prev, .next {
+        display: none;
+        cursor: pointer;
+        position: absolute;
+        top: 40%;
+        width: auto;
+        padding: 16px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+      #dots {
+        display: none;
+        text-align: center;
+        position: absolute;
+        width: 100%;
+        bottom: 2.5vw;
+      }
+      .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        background-color: var(--col-04);
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+      .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+      #semi-transparant-buttons {
+        display: flex;
+        position: absolute;
+        top: 55%;
+        width: 100%;
+        justify-content: center;
+      }
+      .semi-trans-btn {
+        font-family: var(--txt-font);
+        font-size: x-large;
+        font-weight: bold;
+        display: flex;
+        padding: 30px 20px;
+        margin: 10px;
+        color: white;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+        transition: all 0.3s ease-out;
+        text-align: center;
+        cursor: pointer;
+      }
+      .semi-trans-btn > svg {
+        width: 24px;
+        height: 24px;
+        margin-right: 5px;
+      }
+      #about-bodyshape {
+        background-image: linear-gradient(to bottom, var(--col-01), var(--col-01), var(--col-02));
+      }
+      #for-who {
+        background-color: var(--col-05);
+      }
+      /* Hover styling */
+      .prev:hover, .next:hover {
+        background-color: var(--col-02);
+      }
+      .active, .dot:hover {
+        background-color: var(--col-02);
+      }
+      .semi-trans-btn:hover, .semi-trans-btn:focus, .semi-trans-btn:active {
+        background: rgba(255, 255, 255, 0.8);
+        color: black;
+        transition: all 0.5s ease-in;
+      }
+      #semi-transparant-buttons > .semi-trans-btn:hover > svg > path {
+        fill: black;
+        transition: all 0.5s ease-in;
+      }
+      /* Keyframes */
+      @-webkit-keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+      }
+      @@keyframes fade {
+        from {opacity: .4}
+        to {opacity: 1}
+      }
+      /* Media Screen */
+      @media only screen and (max-width: 1013px){
+        .infospacer-content {
+          width: 65%;
+        }
+        .photo-gallery > img {
+          height: 37.2vw;
+          width: 27.75vw;
+        }
+      }
+      @media only screen and (max-width: 499px){
+        .photo-gallery {
+          flex-direction: column;
+          display: block;
+        }
+        .photo-gallery > img {
+          height: 375px;
+          width: 280px;
+          margin: 0px 10px 10px;
+        }
+        .photo-gallery > img:nth-child(3) {
+          margin: 0px 10px -10px;
+        }
+      }
+      @media only screen and (max-width: 377px){
+        #about-bodyshape > .infospacer-content > h1 {
+          font-size: 8vw;
+        }
+        #about-bodyshape > .infospacer-content > h3, #for-who > .infospacer-content > h3 {
+          font-size: 6vw;
+        }
+        #about-bodyshape > .infospacer-content > p, #for-who > .infospacer-content > p {
+          font-size: 4.8vw;
+        }
+      }
+    </style>
+    <!-- HTML LAYOUT !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <div style="display:none !important;">
+      <title>Jouw Geluk | Coaching Praktijk Drechtsteden</title>
+    </div>
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <div class="container-images" style="background-image: url({{url_for('static', filename='/img/beach.jpg')}})"></div>
+      </div>
+      <div class="mySlides fade">
+        <div class="container-images" style="background-image: url({{url_for('static', filename='/img/bodyshape1.jpg')}})"></div>
+      </div>
+      <div class="mySlides fade">
+        <div class="container-images" style="background-image: url({{url_for('static', filename='/img/bodyshape3.jpg')}})"></div>
+      </div>
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      <div id="dots">
+        <span class="dot" onclick="currentSlides(1)"></span>
+        <span class="dot" onclick="currentSlides(2)"></span>
+        <span class="dot" onclick="currentSlides(3)"></span>
+      </div>
+      <div class="btn-spacer"></div>
+      <div id="semi-transparant-buttons">
+        <button class="semi-trans-btn" onclick="change_route('{{scheme}}://{{domain_url}}/cardioboxing')"> {% include "svg/lifecoach.svg" %} Life Coach</button>
+        <button class="semi-trans-btn" onclick="change_route('{{scheme}}://{{domain_url}}/cardioboxing')"> {% include "svg/childcoach.svg" %} Kinder Coach</button>
+      </div>
+      <div class="btn-spacer"></div>
+    </div>
+    <div class="gold infospacer"> {% include "svg/curved-layer.svg" %}
+      <div id="about-bodyshape" style="text-align:center; padding:20px 0 32px;">
+        <div class="infospacer-content">
+          <h1>Jouw Geluk</h1>
+          <h3>Als je met plezier traint, kun je alles bereiken.</h3>
+          <p>Wil jij: hard trainen, doelen bereiken, lachen en vooral laten zijn wie je bent? Dan ben je bij BodyShape aan het juiste adres!
+            Bij BodyShape trainen we heerlijk in de buitenlucht. Je krijgt persoonlijke aandacht ookal trainen we in groepsverband. Je komt
+            in een leuke groep terecht waarin iedereen elkaar respecteert, motiveert, helpt en waar naast het lachen hard getraind wordt.</p>
+          <button class="black-btn svg-btn"> {% include "svg/signup.svg" %} <a>Inschrijven</a></button>
+        </div>
+      </div>
+    </div>
+    <div class="black infospacer" style=""> {% include "svg/curved-layer.svg" %}
+      <div id="for-who" style="text-align:center; padding:20px 0 32px;">
+        <div class="infospacer-content">
+          <h3>BodyShape is er voor iedereen.</h3>
+          <p>Het maakt niet uit of je ervaren of onervaren bent, wat je doelen zijn of welke leeftijd je hebt, bij BodyShape traint iedereen
+            op zijn of haar eigen niveau!</p>
+          <button class="gold-btn svg-btn"> {% include "svg/lessons.svg" %} <a href="mailto:bodyshapedordrecht@gmail.com?subject=Proefles nemen">Proefles nemen</a></button>
+        </div>
+        <div class="photo-gallery">
+          <img src="{{url_for('static', filename='/img/cardio-01.jpg')}}">
+          <img src="{{url_for('static', filename='/img/cardio-02.jpg')}}">
+          <img src="{{url_for('static', filename='/img/circuit-01.jpg')}}">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- JS SCRIPT / jQuery !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!-->
+    <script src="{{url_for('static', filename='js/pages/home.js')}}"></script>
+{% endblock %}

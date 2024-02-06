@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" type="image/png" href="{{url_for('static', filename='/img/logo.png')}}"/>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--Dropdown carret-->
+
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='/css/base.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='/css/reset.css')}}">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="{{url_for('static', filename='/js/functions.js')}}"></script>
+
+    <script class="removeonload">
+      got_script=[];
+      scheme="{{scheme}}";
+      domain_url="{{domain_url}}";
+    </script>
+  </head>
+
+  <body>
+    {% include "header.html" %}
+    {% include "navbar.html" %}
+    <div id="content"> {% block content %}{% endblock %}</div>
+    {% include "footer.html" %}
+
+    <div id="hidden-content" style="display:none !important;"></div>
+  </body>
+
+</html>
