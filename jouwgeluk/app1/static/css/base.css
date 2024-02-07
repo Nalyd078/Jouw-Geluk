@@ -4,7 +4,7 @@
   --col-01: #d1b38f; /* Color from Logo */
   --col-02: #decac3; /* Color touch */
   --col-03: #f5f0ea; /* Huisstijl kleur beige */
-  --col-04: #f7f9fa; /* Background & txt color */
+  --col-04: #f7f9fa; /* Background & txt color */1 6 50748708
   --col-07: #eef4f7; /* Nav buttons touch / Lining color */
   --col-05: #444444; /* Black Buttons/lining */
   --col-06: #222222; /* Black Buttons/lining touch */
@@ -44,7 +44,7 @@
   margin: auto;
 }
 .infospacer-content > h1 {
-  padding: 12px 0;
+  padding: 12px 0 20px;
   font-family: var(--deco-font);
 }
 .infospacer-content > h3 {
@@ -60,17 +60,27 @@
   padding: 12px 0px;
   text-align: justify;
 }
+
+#lifeCoachBeschrijving {
+  color: black;
+}
+
+#kinderCoachBeschrijving {
+  color: white;
+}
+
 /*! Photo Gallery for content !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 .photo-gallery {
   display: flex;
   justify-content: center;
-  margin: 32px auto 12px;
+  margin: 60px auto 12px;
 }
 .photo-gallery > img {
   height: 375px;
   width: 275px;
   margin: 0 10px;
   border: solid var(--col-01) 1px;
+  object-fit: cover;
 }
 /*! Curved Layer for content !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! */
 .infospacer {
@@ -120,10 +130,10 @@
   text-decoration: none;
 }
 .gold-btn {
-  background-color: var(--col-01);
+  background-color: var(--col-003);
 }
 .gold-btn:hover {
-  background-color: var(--col-02);
+  background-color: var(--col-06);
   transition: all .15s linear;
 }
 .black-btn {
@@ -133,6 +143,73 @@
   background-color: var(--col-06);
   transition: all .15s linear;
 }
+
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+  background-color: #25D366;
+  color: white;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: background-color 0.3s, width 0.3s ease-in-out, transform 0.2s, box-shadow 0.3s;
+  white-space: nowrap;
+  width: 35px;
+  height: 35px;
+}
+
+.whatsapp-button svg {
+  width: 34px;
+  height: 34px;
+  margin-right: 8px;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.whatsapp-button span {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 8px;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.whatsapp-button:hover,
+.whatsapp-button:focus {
+  background-color: #1E9E5E;
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  width: auto;
+  padding: 10px 20px;
+  border-radius: 25px;
+}
+
+.whatsapp-button:hover svg,
+.whatsapp-button:focus svg {
+  transform: translateX(-10px);
+}
+
+.whatsapp-button:hover span,
+.whatsapp-button:focus span {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.whatsapp-button:active {
+  background-color: #168844;
+  transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+}
+
 @media only screen and (max-width: 377px){
   .svg-btn {
     padding: 3.5vw;

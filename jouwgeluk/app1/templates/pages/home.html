@@ -105,6 +105,24 @@
         fill: black;
         transition: all 0.5s ease-in;
       }
+
+      #kinderCoachTitel {
+        color: white;
+      }
+
+      #quote {
+        font-family: var(--deco-font), sans-serif;
+        color: white;
+        padding: 20px;
+        font-size: 3rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        border-radius: 10px;
+        display: inline-block;
+        margin: 20px;
+        max-width: 80%;
+        text-align: center;
+      }
+
       /* Keyframes */
       @-webkit-keyframes fade {
         from {opacity: .4}
@@ -181,28 +199,29 @@
     <div class="gold infospacer"> {% include "svg/curved-layer.svg" %}
       <div id="about-bodyshape" style="text-align:center; padding:20px 0 32px;">
         <div class="infospacer-content">
-          <h1>Jouw Geluk</h1>
-          <h3>Als je met plezier traint, kun je alles bereiken.</h3>
-          <p>Wil jij: hard trainen, doelen bereiken, lachen en vooral laten zijn wie je bent? Dan ben je bij BodyShape aan het juiste adres!
+          <h1>Life Coaching</h1>
+          <p id="lifeCoachBeschrijving">Wil jij: hard trainen, doelen bereiken, lachen en vooral laten zijn wie je bent? Dan ben je bij BodyShape aan het juiste adres!
             Bij BodyShape trainen we heerlijk in de buitenlucht. Je krijgt persoonlijke aandacht ookal trainen we in groepsverband. Je komt
             in een leuke groep terecht waarin iedereen elkaar respecteert, motiveert, helpt en waar naast het lachen hard getraind wordt.</p>
-          <button class="black-btn svg-btn"> {% include "svg/signup.svg" %} <a>Inschrijven</a></button>
+          <button class="black-btn svg-btn"> {% include "svg/signup.svg" %} <a>Ga voor geluk</a></button>
         </div>
       </div>
     </div>
     <div class="black infospacer" style=""> {% include "svg/curved-layer.svg" %}
       <div id="for-who" style="text-align:center; padding:20px 0 32px;">
         <div class="infospacer-content">
-          <h3>BodyShape is er voor iedereen.</h3>
-          <p>Het maakt niet uit of je ervaren of onervaren bent, wat je doelen zijn of welke leeftijd je hebt, bij BodyShape traint iedereen
-            op zijn of haar eigen niveau!</p>
-          <button class="gold-btn svg-btn"> {% include "svg/lessons.svg" %} <a href="mailto:bodyshapedordrecht@gmail.com?subject=Proefles nemen">Proefles nemen</a></button>
+          <h1 id="kinderCoachTitel">Kinder Coaching</h1>
+          <p id="kinderCoachBeschrijving">Wil jij: hard trainen, doelen bereiken, lachen en vooral laten zijn wie je bent? Dan ben je bij BodyShape aan het juiste adres!
+            Bij BodyShape trainen we heerlijk in de buitenlucht. Je krijgt persoonlijke aandacht ookal trainen we in groepsverband. Je komt
+            in een leuke groep terecht waarin iedereen elkaar respecteert, motiveert, helpt en waar naast het lachen hard getraind wordt.</p>
+          <button class="gold-btn svg-btn"> {% include "svg/signup.svg" %} <a href="mailto:bodyshapedordrecht@gmail.com?subject=Proefles nemen">Zet de eerste stap</a></button>
         </div>
         <div class="photo-gallery">
-          <img src="{{url_for('static', filename='/img/cardio-01.jpg')}}">
-          <img src="{{url_for('static', filename='/img/cardio-02.jpg')}}">
-          <img src="{{url_for('static', filename='/img/circuit-01.jpg')}}">
+          <img src="{{url_for('static', filename='/img/homepage_foto_01.jpg')}}">
+          <img src="{{url_for('static', filename='/img/homepage_foto_02.jpg')}}">
+          <img src="{{url_for('static', filename='/img/homepage_foto_03.jpg')}}">
         </div>
+        <h3 id="quote">" Als je geluk zoekt, begin dan bij jezelf "</h3>
       </div>
     </div>
   </div>
